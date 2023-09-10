@@ -1,0 +1,451 @@
+@import "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css";
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  all: unset;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+body {
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+button {
+  background-color: white;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+form {
+  width: 100%;
+}
+
+.pic-input::placeholder {
+  color: gray;
+  opacity: 0.9;
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.formBtn {
+  cursor: pointer;
+  width: 100%;
+  padding: 7px 20px;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+  background-color: #04aaff;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  cursor: pointer;
+  background-color: tomato;
+}
+
+/* Profile Page */
+
+.profileForm {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logOut {
+  margin-top: 50px;
+}
+
+/* Nwitter Factory */
+
+.factoryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.factoryInput__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.factoryInput__input {
+  flex-grow: 1;
+  height: 40px;
+  padding: 0px 20px;
+  color: black;
+  border: 1px solid #04aaff;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.factoryInput__arrow {
+  position: absolute;
+  right: 0;
+  background-color: #04aaff;
+  height: 40px;
+  width: 40px;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+}
+
+.factoryInput__attachmentContainer {
+  flex-grow: 1;
+  width: 90%;
+  height: 300px;
+  padding: 20px;
+  border: 1px solid #04aaff;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* 부모 요소를 상대적 포지션으로 설정 */
+}
+
+.factoryInput__label {
+  color: #04aaff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.factoryInput__label span {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.factoryForm__attachment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.factoryForm__attachment img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.factoryForm__clear {
+  color: #04aaff;
+  cursor: pointer;
+  text-align: center;
+  position: absolute; /* clear 버튼을 절대적 포지션으로 설정 */
+  top: 10px;
+  right: 10px; /* 이미지 우측 상단에 위치 */
+}
+
+.factoryForm__clear span {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+/* Pic */
+
+.picEdit .formBtn {
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.pic {
+  margin-bottom: 30px;
+  background-color: white;
+  width: 100%;
+  max-width: 320px;
+  padding: 0px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.pic__main {
+  width: 90%;
+  padding: 20px;
+  border: 1px solid #04aaff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* 부모 요소를 상대적 포지션으로 설정 */
+}
+
+.pic__profile {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.pic h4 {
+  font-size: 14px;
+}
+
+.pic img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.pic__actions {
+  /* position: absolute;
+  right: 10px;
+  top: 10px; */
+}
+
+.pic__actions span {
+  cursor: pointer;
+}
+
+.pic__actions span:first-child {
+  margin-right: 10px;
+}
+
+.pic__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pic__heart {
+  display: flex;
+  align-items: center;
+}
+
+/* Auth */
+
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.authBtns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+}
+
+.authBtn {
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 0px;
+  font-size: 12px;
+  text-align: center;
+  width: 150px;
+  background: white;
+  cursor: pointer;
+}
+
+/* AuthForm */
+
+.authInput {
+  max-width: 320px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: rgb(241, 241, 241);
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: black;
+}
+
+.authSubmit {
+  text-align: center;
+  background: #4c00ff;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.authError {
+  color: tomato;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.authSwitch {
+  color: #04aaff;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  display: block;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.signupInput__input {
+  flex-grow: 1;
+  height: 40px;
+  width: 90%;
+  padding: 0px 20px;
+  margin-top: 10px;
+  color: black;
+  border: 1px solid #04aaff;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.signup__button {
+  flex-grow: 1;
+  height: 40px;
+  width: 90%;
+  padding: 0px 20px;
+  margin-top: 10px;
+  color: white;
+  background-color: #04aaff;
+  border: transparent;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.picInput__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.picInput__input {
+  flex-grow: 1;
+  height: 40px;
+  padding: 0px 50px 0px 20px;
+  color: black;
+  border: 1px solid #04aaff;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.picInput__arrow {
+  position: absolute;
+  right: 0;
+  background-color: #04aaff;
+  height: 40px;
+  width: 40px;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+}
+
+.comment__container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.comment__nickname {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.comment__date {
+  color: gray;
+  margin-left: auto;
+}
+
+/* 탑바 스타일 */
+.top-bar {
+  background-color: #007bff; /* 탑바 배경색 */
+  color: white; /* 탑바 텍스트 색상 */
+  padding: 10px; /* 탑바 여백 */
+  display: flex;
+  justify-content: space-between; /* 로고와 네비게이션을 좌우로 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+.top-bar__logo {
+  font-size: 24px; /* 로고 텍스트 크기 */
+  font-weight: bold; /* 로고 텍스트 굵기 */
+}
+
+.top-bar__nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.top-bar__nav ul li {
+  display: inline;
+  margin-right: 20px; /* 각 네비게이션 항목 사이의 간격 조절 */
+}
+
+.top-bar__nav ul li:last-child {
+  margin-right: 0; /* 마지막 네비게이션 항목의 간격 제거 */
+}
+
+.top-bar__nav ul li a {
+  text-decoration: none;
+  color: white; /* 네비게이션 항목 텍스트 색상 */
+}
+
+/* 본문 및 페이지 스타일 */
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #f7f7f7; /* 페이지 하단 배경색 */
+  padding: 10px;
+  text-align: center;
+}
