@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Picstagram/static/css/main.08afe4de.css",
+    "main.js": "/Picstagram/static/js/main.10171e91.js",
+    "static/js/787.94491784.chunk.js": "/Picstagram/static/js/787.94491784.chunk.js",
+    "index.html": "/Picstagram/index.html",
+    "main.08afe4de.css.map": "/Picstagram/static/css/main.08afe4de.css.map",
+    "main.10171e91.js.map": "/Picstagram/static/js/main.10171e91.js.map",
+    "787.94491784.chunk.js.map": "/Picstagram/static/js/787.94491784.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08afe4de.css",
+    "static/js/main.10171e91.js"
+  ]
+}
