@@ -4,6 +4,7 @@ import {
   doc,
   deleteDoc,
   updateDoc,
+  arrayRemove,
   getDoc,
   getDocs,
   addDoc,
@@ -101,6 +102,11 @@ const Picstagram = ({ uid, picObj, isOwner }) => {
       await deleteDoc(PicTextRef);
       const storageRef = ref(storageService, picObj.attachmentUrl);
       await deleteObject(storageRef);
+
+      const userRef = doc(dbService, "users", `${uid}`);
+      await updateDoc(userRef, {
+        pId: arrayRemove(picObj.id),
+      });
     }
   };
 

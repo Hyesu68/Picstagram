@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { dbService } from "fbase";
-import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  updateDoc,
+  doc,
+  arrayUnion,
+} from "firebase/firestore";
 import { v4 } from "uuid";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
@@ -81,11 +87,16 @@ const PicFactory = ({ userObj }) => {
         attachmentUrl = await getDownloadURL(response.ref);
       }
 
-      await addDoc(collection(dbService, "pics"), {
+      const picsRes = await addDoc(collection(dbService, "pics"), {
         text: pic,
         createdAt: Date.now(),
         creatorId: userObj.uid,
         attachmentUrl,
+      });
+
+      const picRef = doc(dbService, "users", `${userObj.uid}`);
+      await updateDoc(picRef, {
+        pId: arrayUnion(picsRes.id),
       });
     }
 

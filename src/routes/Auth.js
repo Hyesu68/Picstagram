@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   getAuth,
   signInWithPopup,
@@ -14,6 +14,13 @@ import {
 import AuthForm from "components/AuthForm";
 
 const Auth = () => {
+  useEffect(() => {
+    const clearHistory = () => {
+      window.history.replaceState(null, null, window.location.pathname);
+    };
+    clearHistory();
+  }, []);
+
   const onSocialClick = async (event) => {
     const {
       target: { name },

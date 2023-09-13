@@ -11,13 +11,15 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { v4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ setUser, refreshUser }) => {
   const [error, setError] = useState("");
   const [attachment, setAttachment] = useState("");
   const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const storageService = getStorage();
   const onSubmit = async (event) => {
@@ -45,16 +47,24 @@ const Signup = () => {
 
       const usersCollection = collection(dbService, "users");
       const userDocRef = doc(usersCollection, data.user.uid);
-      await setDoc(userDocRef, {
+      const userObj = {
         uid: data.user.uid,
         email: email,
         nickname: nickname,
         profile: attachmentUrl,
-      });
+      };
+      await setDoc(userDocRef, userObj);
       console.log(data);
+      setUser(userObj);
+      refreshUser();
+      handleGoHome();
     } catch (error) {
       setError(error.message);
     }
+  };
+
+  const handleGoHome = () => {
+    navigate("/");
   };
 
   const onChange = (event) => {

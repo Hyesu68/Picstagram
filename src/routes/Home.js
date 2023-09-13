@@ -18,6 +18,11 @@ const Home = ({ userObj }) => {
       }));
       setPics(picArr);
     });
+
+    const clearHistory = () => {
+      window.history.replaceState(null, null, window.location.pathname);
+    };
+    clearHistory();
   }, []);
 
   return (

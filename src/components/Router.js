@@ -7,7 +7,7 @@ import Profile from "routes/Profile";
 import Post from "routes/Post";
 import Signup from "routes/Signup";
 
-const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
+const AppRouter = ({ refreshUser, isLoggedIn, userObj, setUser }) => {
   return (
     <Router>
       <div
@@ -34,7 +34,10 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
           ) : (
             <>
               <Route path="/" element={<Auth />} />
-              <Route path="/signup" element={<Signup />} />
+              <Route
+                path="/signup"
+                element={<Signup setUser={setUser} refreshUser={refreshUser} />}
+              />
             </>
           )}
         </Routes>

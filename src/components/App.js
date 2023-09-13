@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
-      console.log(user);
+      console.log("app useEffect", user);
       if (user) {
         setUserObject({
           displayName: user.displayName,
@@ -34,9 +34,9 @@ function App() {
     const UserRef = doc(dbService, "users", `${uid}`);
     const user = await getDoc(UserRef);
     if (user.exists()) {
+      console.log("app getMyUserInfo", user);
       const userData = user.data();
       setUserObj(userData);
-      console.log(userData);
     }
   };
 
@@ -60,12 +60,13 @@ function App() {
 
   return (
     <>
-      <Header userObj={userObj} onLogOut={onLogOut} />
+      <Header userObj={userObj} onLogOut={onLogOut} refreshUser={refreshUser} />
       {init ? (
         <AppRouter
           refreshUser={refreshUser}
-          isLoggedIn={Boolean(userObject)}
-          userObj={userObject}
+          isLoggedIn={Boolean(userObj)}
+          userObj={userObj}
+          setUser={setUserObj}
         />
       ) : (
         "Initializing..."
