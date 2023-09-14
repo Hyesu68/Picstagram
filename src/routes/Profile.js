@@ -24,8 +24,10 @@ const Profile = ({ userObj }) => {
 
   return (
     <div className="profile__container">
-      <img className="profile__profile" src={userObj.profile} />
-      <div>{userObj.nickname}</div>
+      <div className="profile">
+        <img className="profile__profile" src={userObj.profile} />
+        <div className="profile__nickname">{userObj.nickname}</div>
+      </div>
 
       <div className="photo-list">
         {photos.map((photoId, index) => (

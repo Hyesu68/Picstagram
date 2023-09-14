@@ -79,13 +79,24 @@ form {
   flex-direction: column;
 }
 
+.profile {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+}
+
 .profile__profile {
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 50px;
   background-color: white;
+}
+
+.profile__nickname {
+  margin-left: 20px;
+  font-size: 20px;
 }
 
 .profileForm {
@@ -473,10 +484,31 @@ footer {
 }
 
 .photo-item {
-  width: calc(33.33% - 10px); /* 간격 조절을 위해 마진 추가 */
+  width: calc(33.33% - 10px);
+  margin: 5px;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 33.33%; /* 3:1 비율 (세로:가로) */
+  overflow: hidden;
+}
+
+.photo-item:nth-child(3n + 1) {
+  margin-left: 0;
 }
 
 .photo-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }

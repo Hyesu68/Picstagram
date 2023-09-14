@@ -17,8 +17,10 @@ import {
 } from "firebase/storage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import ReactLoading from "react-loading";
 
 const PicFactory = ({ userObj }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [pic, setPic] = useState("");
   const [attachment, setAttachment] = useState("");
   const [changePic, setChangePic] = useState(false);
@@ -43,11 +45,10 @@ const PicFactory = ({ userObj }) => {
       return;
     }
 
+    setIsLoading(true);
     event.preventDefault();
 
     const storageService = getStorage();
-
-    console.log(picObj);
     if (picObj) {
       let attachmentUrl;
       if (changePic) {
@@ -100,6 +101,7 @@ const PicFactory = ({ userObj }) => {
       });
     }
 
+    setIsLoading(false);
     setPic("");
     setAttachment("");
     handleGoHome();
@@ -132,45 +134,56 @@ const PicFactory = ({ userObj }) => {
 
   return (
     <form onSubmit={onSubmit} className="factoryForm">
-      <div className="factoryInput__attachmentContainer">
-        {!attachment && (
-          <>
-            <label htmlFor="attach-file" className="factoryInput__label">
-              <span>Add Photos</span>
-              <FontAwesomeIcon icon={faPlus} />
-            </label>
+      {!isLoading && (
+        <>
+          <div className="factoryInput__attachmentContainer">
+            {!attachment && (
+              <>
+                <label htmlFor="attach-file" className="factoryInput__label">
+                  <span>Add Photos</span>
+                  <FontAwesomeIcon icon={faPlus} />
+                </label>
+                <input
+                  id="attach-file"
+                  type="file"
+                  accept="image/*"
+                  onChange={onFileChange}
+                  style={{ opacity: 0 }}
+                />
+              </>
+            )}
+            {attachment && (
+              <div className="factoryForm__attachment">
+                <img src={attachment} style={{ backgroundImage: attachment }} />
+              </div>
+            )}
+            {attachment && (
+              <div className="factoryForm__clear" onClick={onClearPhotoClick}>
+                <span>Remove</span>
+                <FontAwesomeIcon icon={faTimes} />
+              </div>
+            )}
+          </div>
+          <div className="factoryInput__container">
             <input
-              id="attach-file"
-              type="file"
-              accept="image/*"
-              onChange={onFileChange}
-              style={{ opacity: 0 }}
+              className="factoryInput__input"
+              type="text"
+              onChange={onChange}
+              placeholder="What's on your mind?"
+              maxLength={120}
+              value={pic}
             />
-          </>
-        )}
-        {attachment && (
-          <div className="factoryForm__attachment">
-            <img src={attachment} style={{ backgroundImage: attachment }} />
+            <input
+              type="submit"
+              value="&rarr;"
+              className="factoryInput__arrow"
+            />
           </div>
-        )}
-        {attachment && (
-          <div className="factoryForm__clear" onClick={onClearPhotoClick}>
-            <span>Remove</span>
-            <FontAwesomeIcon icon={faTimes} />
-          </div>
-        )}
-      </div>
-      <div className="factoryInput__container">
-        <input
-          className="factoryInput__input"
-          type="text"
-          onChange={onChange}
-          placeholder="What's on your mind?"
-          maxLength={120}
-          value={pic}
-        />
-        <input type="submit" value="&rarr;" className="factoryInput__arrow" />
-      </div>
+        </>
+      )}
+      {isLoading && (
+        <ReactLoading type="spin" color="#000000" className="loading" />
+      )}
     </form>
   );
 };
