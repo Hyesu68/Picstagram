@@ -94,6 +94,20 @@ form {
   background-color: white;
 }
 
+.profile__message {
+  flex-grow: 1;
+  height: 40px;
+  padding: 0px 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  background-color: #04aaff;
+  border: transparent;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
 .profile__nickname {
   margin-left: 20px;
   font-size: 20px;
@@ -487,7 +501,7 @@ footer {
   margin: 5px;
   box-sizing: border-box;
   position: relative;
-  padding-bottom: 33.33%; /* 3:1 비율 (세로:가로) */
+  padding-bottom: 33.33%;
   overflow: hidden;
 }
 
@@ -511,4 +525,82 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+}
+
+.chat__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatInput__div {
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.chatInput__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ChatList */
+.chatlist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatlist-container {
+  overflow: auto;
+  margin-bottom: 80px;
+  max-height: 70vh;
+}
+
+.chatlist__img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+
+.chatlist__yourchat {
+  display: block;
+  padding: 10px 20px;
+  margin: 10px;
+  color: black;
+  border: 1px solid #04aaff;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+  align-self: flex-start;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.chatlist__mychat {
+  display: block;
+  padding: 10px 20px;
+  margin: 10px;
+  color: black;
+  background-color: rgba(4, 170, 255, 0.4);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+  align-self: flex-end;
+  white-space: normal;
+  word-break: break-all;
 }

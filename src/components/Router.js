@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Auth from "../routes/Auth";
 import Home from "../routes/Home";
@@ -6,8 +6,16 @@ import Navigation from "./Navigation";
 import Profile from "routes/Profile";
 import Post from "routes/Post";
 import Signup from "routes/Signup";
+import Chat from "routes/Chat";
+import Detail from "routes/Detail";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj, setUser }) => {
+  const [isDetail, setIsDetail] = useState(false);
+
+  const setDetail = (detail) => {
+    setIsDetail(detail);
+  };
+
   return (
     <Router>
       <div
@@ -22,7 +30,10 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj, setUser }) => {
         <Routes>
           {isLoggedIn ? (
             <>
-              <Route path="/" element={<Home userObj={userObj} />} />
+              <Route
+                path="/"
+                element={<Home userObj={userObj} setDetail={setDetail} />}
+              />
               <Route
                 path="/profile"
                 element={
@@ -30,6 +41,8 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj, setUser }) => {
                 }
               />
               <Route path="/post" element={<Post userObj={userObj} />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/detail" element={<Detail />} />
             </>
           ) : (
             <>
@@ -43,7 +56,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj, setUser }) => {
         </Routes>
       </div>
 
-      {isLoggedIn && <Navigation userObj={userObj} />}
+      {isLoggedIn && !isDetail && <Navigation userObj={userObj} />}
     </Router>
   );
 };

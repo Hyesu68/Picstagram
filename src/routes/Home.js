@@ -3,7 +3,7 @@ import { dbService } from "fbase";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import Picstagram from "components/Picstagram";
 
-const Home = ({ userObj }) => {
+const Home = ({ userObj, setDetail }) => {
   const [pics, setPics] = useState([]);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ const Home = ({ userObj }) => {
             uid={userObj.uid}
             picObj={pic}
             isOwner={pic.creatorId === userObj.uid}
+            setDetail={setDetail}
           />
         ))}
       </div>

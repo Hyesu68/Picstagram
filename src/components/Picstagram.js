@@ -20,7 +20,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Comment from "./Comment";
 
-const Picstagram = ({ uid, picObj, isOwner }) => {
+const Picstagram = ({ uid, picObj, isOwner, setDetail }) => {
   const [myUserObj, setMyUserObj] = useState();
   const [newPic, setNewPic] = useState(picObj.text);
   const [heart, setHeart] = useState(0);
@@ -43,6 +43,7 @@ const Picstagram = ({ uid, picObj, isOwner }) => {
     getUserInfo();
     getMyUserInfo();
     getComments();
+    setDetail(false);
   }, []);
 
   const getMyUserInfo = async () => {
@@ -150,6 +151,11 @@ const Picstagram = ({ uid, picObj, isOwner }) => {
     setHeart(heart + 1);
   };
 
+  const onClickProfile = () => {
+    setDetail(true);
+    navigate("/detail", { state: { userObj, myUserObj } });
+  };
+
   return (
     <div className="pic">
       <div className="pic__main">
@@ -157,11 +163,14 @@ const Picstagram = ({ uid, picObj, isOwner }) => {
           <div className="pic__bottom">
             <div className="pic__heart">
               <img
+                onClick={onClickProfile}
                 src={userObj.profile}
                 className="pic__profile"
                 style={{ width: 30, height: 30, marginRight: 5 }}
               />
-              <h1 style={{ fontWeight: "bold" }}>{userObj.nickname}</h1>
+              <h1 style={{ fontWeight: "bold" }} onClick={onClickProfile}>
+                {userObj.nickname}
+              </h1>
             </div>
             {isOwner && (
               <div className="pic__actions">
