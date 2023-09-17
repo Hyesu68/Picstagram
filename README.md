@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# [Picstagram](https://hyesu68.github.io/Picstagram) - A Mobile-Centric Social Media Platform for Sharing Photos and Connecting
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+[Picstagram](https://hyesu68.github.io/Picstagram) is a React-based web application designed with a primary focus on mobile devices, offering a seamless experience for photo sharing and social interaction. This developer-friendly platform empowers users to create accounts, log in, and engage in a visually rich environment filled with photos, posts, and messaging capabilities, all optimized for mobile use.
 
-In the project directory, you can run:
+## Screenshots
 
-### `npm start`
+| ![KakaoTalk_Photo_2023-09-16-16-39-14 001](https://github.com/Hyesu68/Picstagram/assets/40760917/8bd20164-e85e-4d2d-9131-388bf8ae0770) | ![KakaoTalk_Photo_2023-09-16-16-39-15 002](https://github.com/Hyesu68/Picstagram/assets/40760917/9bfb557b-9e5b-4d81-9381-e0a47592829f) | ![KakaoTalk_Photo_2023-09-16-16-39-16 003](https://github.com/Hyesu68/Picstagram/assets/40760917/913b772d-2d40-4e4e-8712-af27b9d25402) |
+| :------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                              Signup Page                                                               |                                                               Home Page                                                                |                                                               Post Page                                                                |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| ![KakaoTalk_Photo_2023-09-16-16-47-07](https://github.com/Hyesu68/Picstagram/assets/40760917/065dadb4-2576-4829-85d8-c639fa3b6327) | ![KakaoTalk_Photo_2023-09-16-16-39-18 005](https://github.com/Hyesu68/Picstagram/assets/40760917/a783d188-5561-4987-ae60-b5efc626d503) | ![KakaoTalk_Photo_2023-09-16-16-39-19 006](https://github.com/Hyesu68/Picstagram/assets/40760917/2c62eacb-721f-4193-9962-3aa181fd5bee) |
+| :--------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                              My Page                                                               |                                                              Detail Page                                                               |                                                              Message Page                                                              |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Key Features
 
-### `npm test`
+### User Authentication
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Effortlessly sign up and log in to embark on your Picstagram journey.
 
-### `npm run build`
+### Mobile-First Design
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Enjoy a user-friendly mobile interface for scrolling through photos, leaving comments, and engaging in discussions with fellow members.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Post Functionality
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Easily share your own stories by uploading photos and short captions, all with mobile usability in mind.
 
-### `npm run eject`
+### Profile Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Explore other users' profiles and browse their shared photos with a responsive mobile design.
+- Get to know other users through their profile pictures, nicknames, and activity.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Messaging
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Foster connections and communication with other users through our messaging feature, designed for convenient mobile chatting.
+- Stay connected with friends and engage in private conversations while on the go.
